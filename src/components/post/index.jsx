@@ -25,7 +25,7 @@ const PostPage = () => {
   useEffect(() => {
     setLoading(true);
     clientAPI
-      .get(`http://127.0.0.1:8000/api/v1/posts?offset=${offset}&limit=10`)
+      .get(`/api/v1/posts?offset=${offset}&limit=10`)
       .then(({ data }) => {
         const { count, next, previous, results } = data;
         setPosts(results);

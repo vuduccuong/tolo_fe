@@ -10,7 +10,7 @@ const HomePage = () => {
 
   useEffect(() => {
     setLoading(true);
-    clientAPI.get("http://127.0.0.1:8000/api/v1/accounts").then(({ data }) => {
+    clientAPI.get("/api/v1/accounts").then(({ data }) => {
       const { users } = data;
       setUserList(users);
       setLoading(false);

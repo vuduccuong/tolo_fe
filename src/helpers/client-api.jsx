@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const BASE_URL = "http://138.2.87.246:1996";
 const client = () => {
   const defaultOptions = {
     headers: {
@@ -7,14 +8,20 @@ const client = () => {
     },
   };
   return {
-    get: (url, options = {}) =>
-      axios.get(url, { ...defaultOptions, ...options }),
-    post: (url, data, options = {}) =>
-      axios.post(url, data, { ...defaultOptions, ...options }),
-    put: (url, data, options = {}) =>
-      axios.put(url, data, { ...defaultOptions, ...options }),
-    delete: (url, options = {}) =>
-      axios.delete(url, { ...defaultOptions, ...options }),
+    get: (endpoint, options = {}) =>
+      axios.get(`${BASE_URL}${endpoint}`, { ...defaultOptions, ...options }),
+    post: (endpoint, data, options = {}) =>
+      axios.post(`${BASE_URL}${endpoint}`, data, {
+        ...defaultOptions,
+        ...options,
+      }),
+    put: (endpoint, data, options = {}) =>
+      axios.put(`${BASE_URL}${endpoint}`, data, {
+        ...defaultOptions,
+        ...options,
+      }),
+    delete: (endpoint, options = {}) =>
+      axios.delete(`${BASE_URL}${endpoint}`, { ...defaultOptions, ...options }),
   };
 };
 

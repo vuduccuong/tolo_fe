@@ -21,7 +21,7 @@ const SignIn = () => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     clientAPI
-      .post("http://127.0.0.1:8000/auth/login", data)
+      .post("/auth/login", data)
       .then(({ data }) => {
         const { access_token, token_type } = data;
         localStorage.setItem("access_token", access_token);
