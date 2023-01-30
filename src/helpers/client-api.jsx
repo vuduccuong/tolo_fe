@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = "http://138.2.87.246:1996";
+//const BASE_URL = "http://localhost:8000";
 const client = () => {
   const defaultOptions = {
     headers: {

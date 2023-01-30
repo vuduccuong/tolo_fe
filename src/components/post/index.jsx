@@ -36,6 +36,8 @@ const PostPage = () => {
   }, [offset]);
   return loading ? (
     <em>Loading...</em>
+  ) : posts.length === 0 ? (
+    <h1>Không có bài đăng nào</h1>
   ) : (
     <Fragment>
       <PostList posts={posts} />

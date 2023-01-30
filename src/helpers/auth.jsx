@@ -13,3 +13,7 @@ export const setAuthToken = (access_token, token_type) => {
 export const hasAuth = () => {
   return !!localStorage.getItem("access_token");
 };
+
+export const logOut = () =>{
+  localStorage.removeItem("access_token");
+}

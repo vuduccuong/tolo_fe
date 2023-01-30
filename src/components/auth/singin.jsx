@@ -27,6 +27,9 @@ const SignIn = () => {
         localStorage.setItem("access_token", access_token);
         setAuthToken(access_token, token_type);
         window.location.href = "/";
+      })
+      .catch(({ message }) => {
+        alert(message);
       });
   };
 
